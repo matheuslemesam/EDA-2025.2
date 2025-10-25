@@ -57,7 +57,6 @@ int main() {
     
     int resultado = fatorial(numero);
     
-    // O resultado será 120
     printf("O fatorial de %d é %d\n", numero, resultado); 
     
     return 0;
