@@ -3,7 +3,7 @@
 int BuscaBinariaRecursiva(int *v, int l, int r, int buscado){
 
     if (l > r) {
-        return -1; // O item não foi encontrado, caso base da recursão
+        return l; // O item não foi encontrado, caso base da recursão
     }
 
     int meio = (l+r)/2; // divide o vetor
@@ -16,10 +16,28 @@ int BuscaBinariaRecursiva(int *v, int l, int r, int buscado){
 
     else
         return BuscaBinariaRecursiva(v, l, meio-1, buscado); // se o buscado for menor, chama a busca redividindo o vetor para baixo
+        
 }
 
-int main(){
+int main() {
 
+    int nVet, nBusc;
+
+    scanf("%d %d", &nVet, &nBusc);
+
+    int vetorN[nVet];
+    int vetorB[nBusc];
+
+    for(int i=0; i<nVet; i++){
+        scanf("%d ", &vetorN[i]);
+    }
+
+    for(int i=0; i<nBusc; i++){
+        scanf("%d ", &vetorB[i]);
+    }
+
+    for(int i=0; i<nBusc; i++)
+    printf("%d\n", BuscaBinariaRecursiva(vetorN, 0, nVet-1, vetorB[i]));
 
     return 0;
 }
